@@ -15,7 +15,7 @@ date: "2021-05-22"
 lastmod: "2021-05-22"
 
 # Is this an unpublished draft?
-draft: false
+draft: true
 
 # Show this page in the Featured widget?
 featured: true
@@ -23,10 +23,10 @@ featured: true
 # Featured image
 # Place an image named `featured.jpg/png` in this page's folder and customize its options here.
 image:
-  caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/CpkOjOcXdUY)'
+  caption: 'Image credit: [**MediaWiki**](https://www.mediawiki.org/wiki/Google_Summer_of_Code/2020)'
   focal_point: ""
   placement: 2
-  preview_only: false
+  preview_only: true
 
 authors:
 - admin

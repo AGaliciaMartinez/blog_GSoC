@@ -6,7 +6,7 @@ title: Asier Galicia Martínez
 superuser: true
 
 # Role/position/tagline
-role: Master student
+role: Master student at TU Delft
 
 # Organizations/Affiliations to show in About widget
 organizations:
@@ -14,7 +14,7 @@ organizations:
   url: https://www.tudelft.nl/
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include ... to be defined.
+bio: 
 
 # Interests to show in About widget
 interests:
