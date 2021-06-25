@@ -46,7 +46,7 @@ parallelizable operations. This is why during the first weeks of the project I
 focused on preparing a set of benchmarks that will help us understanding when
 and how to make use of the GPUs. I was specially interested to see if my own
 hardware could benefit from using a GPU and how the hardware provided by colab
-compares with it. The final goal is to provide an easy function, `qutip_tensorflwo.benchmarks()`
+compares with it. The final goal is to provide an easy function, `qutip_tensorflow.benchmarks()`
 that allows the user to test qutip-tensorflow's performance in its own hardware.
 In this post, I will explain which tools are available for benchmarking in
 python and in the next post I will show some of the results obtained in the
