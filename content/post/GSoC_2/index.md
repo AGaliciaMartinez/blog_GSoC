@@ -1,8 +1,8 @@
 ---
-title: Benchmarking framework
+title: Benchmarking - motivation and tools (1/2)
 
 # Summary for listings and search engines
-summary: During this post I will show the benchmark framework I prepared for a future comparison between qutip-tensorflow and qutip. Given that qutip-tensorflow is yet to be writen, I will use this benchmarks to compare QuTiP with Numpy, Scipy and even TensorFlow working with a GPU.
+summary: During this post I will introduce the benchmark tools 
 
 # Link this post with a project
 projects: []
@@ -37,37 +37,41 @@ categories:
 - GSoC
 ---
 
-In this post I will.... Furthermore, I will show some of the results ... But
-first, let me argue why the benchmarks were thoutght to be necessary for this
-project.
-
-# Motivation and tools for benchmarking
-
 One of the main motivations for this project was to leverage the computational
 power of a Graphics Processing Unit (GPU) to perform faster computations with
 QuTiP. However, even though overall GPUs are rated with higher floating point
 operations per second (FLOPS) than CPUs, it is not straightforward to use this
-computational power in our advantage. In particular, GPUs require highly
+computational power for our advantage. In particular, GPUs require highly
 parallelizable operations. This is why during the first weeks of the project I
 focused on preparing a set of benchmarks that will help us understanding when
 and how to make use of the GPUs. I was specially interested to see if my own
 hardware could benefit from using a GPU and how the hardware provided by colab
-compares with it.
+compares with it. The final goal is to provide an easy function, `qutip_tensorflwo.benchmarks()`
+that allows the user to test qutip-tensorflow's performance in its own hardware.
+In this post, I will explain which tools are available for benchmarking in
+python and in the next post I will show some of the results obtained in the
+benchmarks.
 
 There are several approaches that can be followed to write benchmarks in python.
 The simplest one would be to use the `time` module. This module is a great tool
 for quick benchmarking of a function, but using it would require a lot of
 boilerplate code for both parametrizing the benchmarks and saving the results.
-This is why I decided to use more sophisticated tools such as `pytest-benchmark`
-or `asv`.
+Notice that I am mostly interested in comparing the performance of a function
+for several matrix sizes and different data representations (for example,
+NumPy's `ndarray`, QuTiP's new `Dense` representation or TensorFlow's
+`Tensors`). Being able to seamlessly parametrize the benchmarks would
+greatly simplify the writing process. This is why I decided to use more sophisticated tools such
+as `pytest-benchmark` or `asv`. Both of these tools automatically store the
+results in JSON format and have included an easy way to parametrize the
+benchmarks, which I will explain a little bit more in detail now.
 
-## Pytest-benchmark
+### [Pytest-benchmark](https://github.com/ionelmc/pytest-benchmark)
 
 `pytest` is a popular python package for testing purposes for which
 several plugins are available. One of these is `pytest-benchmark` which provides
-benchmarking functionality. What I found most interesting about `pytest` is the
-parametrization of a test (or a benchmark in `pytest-benchmark`) using
-decorators which greatly simplifies this task. An example of this is:
+benchmarking functionality. What I found most interesting about `pytest` is that 
+test (or a benchmark in `pytest-benchmark`) can be parametrized using
+decorators. An example of this is:
 ```
 import numpy as np
 import pytest
@@ -80,12 +84,15 @@ def test_add(benchmark, size):
     # benchmark a+a
     benchmark(a.__add__, a)
 ```
-In the above code we parametrize a benchmark for the addition of two NumPy
-matrices of different sizes. 
+In the above code we parametrize the function to benchmark the addition of
+two NumPy matrices as a function of the matrix size. This is achieved with the
+decorator `@pytest.mark.parametrize("size", np.logspace(1, 3, 5,
+dtype=int).tolist())`. 
 
-## Airspeed velocity (`asv`)
+
+### [Airspeed velocity](https://asv.readthedocs.io/en/stable/) (`asv`)
 `asv` defines itself as "a tool for benchmarking python package over its
-lifetime". Indeed, it provides very useful functionality to test a package for
+lifetime". Indeed, it includes very useful tools to test a package for
 regression, such as running the benchmarks over a range of commits with a single
 command (for example, `asv run master..mybranch ` would run the benchmarks for
 the commits since branching off master). It also provides parametrization of the
@@ -106,29 +113,38 @@ class TimeLA:
 
     # benchmark a+a
     def time_add(self):
-        _ = self.a + self.a
+    	a = self.a
+        _ = a + a
 ```
+Another useful feature of `asv` is that it can easily generate an html page with
+the benchmark results. You can see an example of such page 
+[here](https://pv.github.io/numpy-bench/) for NumPy.
 
-## Conclusions
+### Conclusions
 
-As a side note, this tool is being used by the popular NumPy package to
-keep track of the performance of their code over time.  However, for the
-purposes of this project, we are not so much interested in keeping track of code
-regression but rather comparing the performance between the different data
-representations in QuTiP. I decided to use `pytest-benchmark` for being a plugin
-for `pytest` that was going to use for testing.
+Both `asv` and `pytest-benchmark` are great tools that would fit my requirements
+to write benchmarks: they can be easily parametrized and store the results in
+JSON format. `asv` has the advantage of providing extra tools that facilitates
+benchmarking a code over its lifetime. However, I am mostly interested in on
+comparing the performance of different functions for different input sizes.
+Hence, I decided to use `pytest-benchmark` as I am already used to using `pytest`
+for testing purposes. However, if the goal of the project had been to ensure no
+regression occur in the future of this package, I would have chosen `asv` as the
+tool for benchmarking.
 
+In the next post I will show a comparison of the benchmark results. Hope to see
+you there!
 
-I will now show some of the results obtained when comparing the following data
-representations: `numpy`, `scipy`(sparse representation of a matrix), 
+<!--I will now show some of the results obtained when comparing the following data-->
+<!--representations: `numpy`, `scipy`(sparse representation of a matrix), -->
 
-```
-# Example python code
-a = 5
-print(a)
-```
-In particular, we will show comparisons between
-the functions: `add` (element-wise addition), `multiply`(element-wise
-multiplication), `matmul`(matrix multiplication), `expm` (matrix exponentiation)
-and `eigvals` (obtaining eigenvalues for a matrix). These are very common
-operations in QuTiP for which a speed-up would be desirable.
+<!--```-->
+<!--# Example python code-->
+<!--a = 5-->
+<!--print(a)-->
+<!--```-->
+<!--In particular, we will show comparisons between-->
+<!--the functions: `add` (element-wise addition), `multiply`(element-wise-->
+<!--multiplication), `matmul`(matrix multiplication), `expm` (matrix exponentiation)-->
+<!--and `eigvals` (obtaining eigenvalues for a matrix). These are very common-->
+<!--operations in QuTiP for which a speed-up would be desirable.-->
