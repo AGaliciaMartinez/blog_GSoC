@@ -1,5 +1,5 @@
 ---
-title: Google Summer of Code 2021.
+title: Google Summer of Code 2021
 
 # Summary for listings and search engines
 summary: Introducing my project for the GSoC 2021.
