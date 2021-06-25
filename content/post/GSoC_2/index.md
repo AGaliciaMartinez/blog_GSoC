@@ -2,7 +2,7 @@
 title: Benchmarking - motivation and tools (1/2)
 
 # Summary for listings and search engines
-summary: During this post I will introduce the benchmark tools 
+summary: During this post I will introduce the benchmark tools that I will be using for the project. 
 
 # Link this post with a project
 projects: []
