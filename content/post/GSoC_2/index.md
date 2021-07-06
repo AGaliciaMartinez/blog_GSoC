@@ -32,6 +32,8 @@ authors:
 
 tags:
 - GSoC
+- Python
+- QuTiP
 
 categories:
 - GSoC

@@ -32,6 +32,7 @@ authors:
 
 tags:
 - GSoC
+- QuTiP
 
 categories:
 - GSoC
