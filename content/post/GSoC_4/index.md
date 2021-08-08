@@ -2,7 +2,7 @@
 title: TensorFlow Data Layer.
 
 # Summary for listings and search engines
-summary: In this post I will show the results of the benchmarks performed to compare the python packages NumPy, SciPy, QuTiP and TensorFlow when performing basic linear algebra operations.
+summary: In this post I will update the progress in creating a QuTiP data type that is backed by TensorFlow's Tensors.
 
 # Link this post with a project
 projects: []
