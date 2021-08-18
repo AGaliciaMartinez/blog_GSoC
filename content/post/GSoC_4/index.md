@@ -8,10 +8,10 @@ summary: In this post I will update the progress in creating a QuTiP data type t
 projects: []
 
 # Date published
-date: "2021-07-21"
+date: "2021-08-04"
 
 # Date updated
-lastmod: "2021-07-21"
+lastmod:  "2021-08-04"
 
 # Is this an unpublished draft?
 draft: false
