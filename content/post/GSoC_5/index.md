@@ -1,5 +1,5 @@
 ---
-title: qutip-tensorflow working example.
+title: qutip-tensorflow working example
 
 # Summary for listings and search engines
 summary: In this post I show how qutip-tensorflow can benefit from TensorFlow's auto-differentiation features to optimize an operation in a qubit.
