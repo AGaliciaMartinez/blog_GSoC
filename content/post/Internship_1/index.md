@@ -2,7 +2,7 @@
 title: A potential benefit to implement tensor networks to QuTiP.
 
 # Summary for listings and search engines
-summary: In this blog post I will summarize my contributions during the GSoC 2021.
+summary: In this blog post I will show with an example the potential speed-ups that QuTiP can benefit from by exploiting the tensor structure of some linear algebra operations.
 
 # Link this post with a project
 projects: []
