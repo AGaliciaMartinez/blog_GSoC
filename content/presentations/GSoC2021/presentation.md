@@ -9,7 +9,7 @@ Asier Galicia
 --- 
 # A little bit of background
 
-QuTiP 5 will come with a new dispatching system that includes by two backends:
+QuTiP 5 will come with a new dispatching system that includes two backends:
 - `Dense` matrices (similar to numpy's `ndarray`).
 - `CSR` matrices (similar to scipy's `csr` array).
 
@@ -53,6 +53,14 @@ Example of minimization algorithms that can be used:
 See the example for auto differentiation and minimization included in `qutip_tensorflow/examples`.
 
 ---
+# qutip-tensorflow
+
+- Nive examaple of how extensible the new dipatching system is in QuTiP 5.
+
+- Allows operating with a GPU in QuTiP.
+- QuTiP now benefits from TensorFlow's auto differentiation and minimization algorithms.
+
+---
 
 # Mentors
 Eric Giguère
@@ -73,5 +81,3 @@ At the loss of considerable accuracy, complex64 achieves noticeable higher opera
 Hardware:
 - GPU: gtx 970
 - CPU: intel i7-6700
-
----
