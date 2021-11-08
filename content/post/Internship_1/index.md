@@ -155,7 +155,7 @@ state_np = state.full().reshape([2]*n)
 # 570 us with n=13, 50 us with n=4.
 %% timeit 
 for j in range(n):
-    state = np.tensordot(H_np, state_np, axes=([0],[j]))
+    state_np = np.tensordot(H_np, state_np, axes=([0],[j]))
 ```
 The complexity of this operation is $O(\log(N)N)$, same as for the sparse
 case. This is because, once more, we perform $n=\log(N)$ operations
@@ -201,12 +201,15 @@ summarized in the following table:
 | method      | $n=13$            | $n=4$             | Operation scaling | Memory scaling (operator) |
 | ----------- | -----------       | -----             | ----              | ----                      |
 | Dense (1)   | 125 $ms$   (x219) | 3 $\mu s$  (x1)   | $N^2$             | $N^2$                     |
-| Sparse (2)  | 1.93 $ms$  (x3.3) | 300 $\mu s$ (100) | $N\log(N)$        | $N$                       |
+| Sparse (2)  | 1.93 $ms$  (x3.3) | 300 $\mu s$ (x100) | $N\log(N)$        | $N$                       |
 | Tensor (3)  | 0.57 $ms$  (x1)   | 50 $\mu s$  (x16) | $N\log(N)$        | $\log(N)$                 |
 
-Table: Benchmark results for the application of Hadamard matrices to a random
+_Table: Benchmark results for the application of Hadamard matrices to a random
 state as defined in the text. $n$ is the number of qubits employed in the
-simulation and $N=2^n$.
+simulation and $N=2^n$. Note that a scaling with $N$ is exponential
+whereas a scaling with $\log(N)$ is linear in the nuber of qubits. This shows
+that the Tensor method is very promising for the simulation of very large
+systems._
 
 We  see Dense is the fasts method for N=4 but the slowest for N=13, as it
 has the worst scaling. For larger systems the Tensor method (3) is the most

@@ -55,8 +55,7 @@ See the example for auto differentiation and minimization included in `qutip_ten
 ---
 # qutip-tensorflow
 
-- Nive examaple of how extensible the new dipatching system is in QuTiP 5.
-
+- Working example showing the extensibility of the new dispatching system is in QuTiP 5.
 - Allows operating with a GPU in QuTiP.
 - QuTiP now benefits from TensorFlow's auto differentiation and minimization algorithms.
 
@@ -72,12 +71,3 @@ Simon Cross
 
 # Thank you for your time!
 
----
-# Operating with a GPU
-
-![bg right:40% 100%](speedup.svg)
-At the loss of considerable accuracy, complex64 achieves noticeable higher operation speeds.
-
-Hardware:
-- GPU: gtx 970
-- CPU: intel i7-6700
