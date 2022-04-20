@@ -27,7 +27,7 @@ education:
   courses:
   - course: MSc in Applied Physics 
     institution: Delft University of Technology
-    year: 2019-now
+    year: 2019-2022
   - course: Bachelor‘s Degree in Physics
     institution: Universidad del País Vasco/Euskal Herriko Unibertsitatea
     year: 2014-2019
