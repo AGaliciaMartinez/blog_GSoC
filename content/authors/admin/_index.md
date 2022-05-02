@@ -14,7 +14,7 @@ organizations:
   url: https://www.tudelft.nl/
 
 # Short bio (displayed in user profile at end of posts)
-bio: 
+bio:
 
 # Interests to show in About widget
 interests:
@@ -59,9 +59,10 @@ social:
 # Link to a PDF of your resume/CV.
 # To use: copy your resume to `static/media/resume.pdf`, enable `ai` icons in `params.toml`, 
 # and uncomment the lines below.
-# - icon: cv
-#   icon_pack: ai
-#   link: media/resume.pdf
+- icon: file-pdf
+  icon_pack: fas
+  label: resume
+  link: media/resume.pdf
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
 email: ""
@@ -69,9 +70,8 @@ email: ""
 # Highlight the author in author lists? (true/false)
 highlight_name: false
 ---
+I finished my Master degree in Applied Physics at TU Delft university on January 2022 and I am now looking for a PHD to start on September (or earlier).
 
-<!--Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.-->
+During my Master thesis I worked in Taminiau Lab under the supervision of C. E. Bradley and T. H. Taminiau. In this project, I worked with a Nitrogen Vacancy centre for which previous work had mapped the position of 27 surrounding nuclear C13 spins. My work consisted on extending previously developed techniques to address 21 of those nuclear spins. We then used this new control over 21 spins to study dynamical nuclear polarisation, dephasing and spin diffusion in this complex coupled spin system.
 
-<!--Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.-->
-
-<!--{{< icon name="download" pack="fas" >}} Download my {{< staticref "media/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.-->
+After finishing my Master thesis, I worked on QuTiP, a python package for the representation and simulation of quantum systems. During this time, I contributed to the QuTiP package itself and developed the qutip-tensorflow plugin for QuTiP. Currently I am part of QuTiP's admin team and I continue contributing sparingly towards the new QuTiP 5 version that is under development.
