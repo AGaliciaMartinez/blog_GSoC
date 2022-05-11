@@ -70,8 +70,8 @@ email: ""
 # Highlight the author in author lists? (true/false)
 highlight_name: false
 ---
-I finished my Master degree in Applied Physics at TU Delft university on January 2022 and I am now looking for a PHD to start on September (or earlier).
+I finished my Master's degree in Applied Physics at TU Delft university on January 2022 and I am now looking for a PHD to start on September (or earlier).
 
-During my Master thesis I worked in Taminiau Lab under the supervision of C. E. Bradley and T. H. Taminiau. In this project, I worked with a Nitrogen Vacancy centre for which previous work had mapped the position of 27 surrounding nuclear C13 spins. My work consisted on extending previously developed techniques to address 21 of those nuclear spins. We then used this new control over 21 spins to study dynamical nuclear polarisation, dephasing and spin diffusion in this complex coupled spin system.
+During my Master's thesis I worked in Taminiau Lab under the supervision of C. E. Bradley and T. H. Taminiau. In this project, I worked with a Nitrogen-Vacancy centre for which previous work had mapped the position of 27 surrounding nuclear C13 spins. My work consisted on extending previously developed techniques to address 21 of those nuclear spins. We then used this new control over 21 spins to study dynamical nuclear polarisation, dephasing and spin diffusion in this complex coupled spin system.
 
-After finishing my Master thesis, I worked on QuTiP, a python package for the representation and simulation of quantum systems. During this time, I contributed to the QuTiP package itself and developed the qutip-tensorflow plugin for QuTiP. Currently I am part of QuTiP's admin team and I continue contributing sparingly towards the new QuTiP 5 version that is under development.
+After finishing my Master thesis, I worked on QuTiP, a python package for the representation and simulation of quantum systems. During this time, I contributed to the QuTiP package and developed the qutip-tensorflow plugin for QuTiP. Currently I am part of QuTiP's admin team and I continue contributing sparingly towards the new QuTiP 5 version that is under development.
